@@ -5,12 +5,13 @@ import org.eclipse.jgit.internal.storage.file.FileRepository;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class GitInitializer {
     private final Path localRepositoryPath;
 
-    public GitInitializer(final Path path) {
-        this.localRepositoryPath = path;
+    public GitInitializer(final String path) {
+        this.localRepositoryPath = Paths.get(path, ".git");
     }
 
     public Git initilize() throws IOException {
