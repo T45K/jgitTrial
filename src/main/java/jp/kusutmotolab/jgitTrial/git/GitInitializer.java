@@ -1,21 +1,23 @@
 package jp.kusutmotolab.jgitTrial.git;
 
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.internal.storage.file.FileRepository;
+import org.eclipse.jgit.api.errors.GitAPIException;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 
 public class GitInitializer {
-    private final Path localRepositoryPath;
+    private final File directory;
+    private final String remoteRepositoryURI;
 
-    public GitInitializer(final Path path) {
-        this.localRepositoryPath = Paths.get(path.toString(),".git");
+    public GitInitializer(final String directory, final String remoteRepositoryURI) {
+        this.directory = new File(directory);
+        this.remoteRepositoryURI = remoteRepositoryURI;
     }
 
-    public Git initialize() throws IOException {
-        final FileRepository fileRepository = new FileRepository(localRepositoryPath.toFile());
-        return new Git(fileRepository);
+    public Git initialize() throws GitAPIException {
+        return Git.cloneRepository()
+                .setURI(remoteRepositoryURI)
+                .setDirectory(directory)
+                .call();
     }
 }
