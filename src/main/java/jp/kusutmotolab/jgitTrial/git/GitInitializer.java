@@ -14,7 +14,7 @@ public class GitInitializer {
         this.localRepositoryPath = Paths.get(path.toString(),".git");
     }
 
-    public Git initilize() throws IOException {
+    public Git initialize() throws IOException {
         final FileRepository fileRepository = new FileRepository(localRepositoryPath.toFile());
         return new Git(fileRepository);
     }
