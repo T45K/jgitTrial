@@ -4,7 +4,7 @@
 package jp.kusutmotolab.jgitTrial;
 
 public class App {
-    public String getGreeting() {
+    String getGreeting() {
         return "Hello world.";
     }
 
