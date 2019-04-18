@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class GitInitializer {
     private final Path localRepositoryPath;
 
-    public GitInitializer(final Paths path) {
+    public GitInitializer(final Path path) {
         this.localRepositoryPath = Paths.get(path.toString(),".git");
     }
 
