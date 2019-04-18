@@ -15,6 +15,6 @@ public class Main {
             Files.createFile(localRepositoryPath);
         }
 
-        final Git git = new GitInitializer(localRepositoryPath).initilize();
+        final Git git = new GitInitializer(localRepositoryPath).initialize();
     }
 }
