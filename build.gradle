@@ -27,6 +27,12 @@ dependencies {
     // https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit
     compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.3.0.201903130848-r'
 
+    // Use AssertJ
+    testCompile 'org.assertj:assertj-core:3.2.0'
+
+    // Use Logger
+    compile 'ch.qos.logback:logback-classic:1.1.3'
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
