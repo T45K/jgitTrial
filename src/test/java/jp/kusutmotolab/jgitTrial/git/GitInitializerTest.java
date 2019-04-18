@@ -15,5 +15,4 @@ public class GitInitializerTest {
         final GitInitializer gitInitializer = new GitInitializer(Paths.get("sample"));
         assertThat(gitInitializer.initialize()).isNotNull().isInstanceOf(Git.class);
     }
-
 }
