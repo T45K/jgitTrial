@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 public class GitInitializer {
     private final Path localRepositoryPath;
 
-    public GitInitializer(final String path) {
-        this.localRepositoryPath = Paths.get(path, ".git");
+    public GitInitializer(final Paths path) {
+        this.localRepositoryPath = Paths.get(path.toString(),".git");
     }
 
     public Git initilize() throws IOException {
