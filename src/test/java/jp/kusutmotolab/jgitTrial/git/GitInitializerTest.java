@@ -20,8 +20,8 @@ public class GitInitializerTest {
     @Test
     public void testInitializer() throws IOException, GitAPIException {
         final Path directoryPath = Paths.get("sample");
-        final GitInitializer gitInitializer = new GitInitializer(directoryPath.toString(), "https://github.com/kusumotolab/kGenProg");
-        final Git git = gitInitializer.initialize();
+        final GitSetUpper gitInitializer = new GitSetUpper(directoryPath.toString(), "https://github.com/kusumotolab/kGenProg");
+        final Git git = gitInitializer.setUp();
         assertThat(git).isNotNull().isInstanceOf(Git.class);
 
         final List<Path> kGPContentsList = Files.list(directoryPath).collect(Collectors.toList());
