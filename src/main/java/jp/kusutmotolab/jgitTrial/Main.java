@@ -1,17 +1,19 @@
 package jp.kusutmotolab.jgitTrial;
 
-import jp.kusutmotolab.jgitTrial.git.GitInitializer;
-import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.GitAPIException;
-
 public class Main {
+    private Configuration configuration;
 
-    /*
-    git clone するところから始まる
-    args[0] clone したリポジトリを格納するディレクトリ(Path)
-    args[1] clone 先(URI)
-     */
-    public static void main(String[] args) throws GitAPIException {
-        final Git git = new GitInitializer(args[0], args[1]).initialize();
+    public Main(final Configuration configuration) {
+        this.configuration = configuration;
+    }
+
+    public static void main(String[] args) {
+        final Configuration configuration = Configuration.Builder.buildFromArgs(args);
+        final Main main = new Main(configuration);
+        main.run();
+    }
+
+    private void run() {
+
     }
 }
