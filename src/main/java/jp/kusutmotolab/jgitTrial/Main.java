@@ -3,7 +3,7 @@ package jp.kusutmotolab.jgitTrial;
 public class Main {
     private Configuration configuration;
 
-    public Main(final Configuration configuration) {
+    private Main(final Configuration configuration) {
         this.configuration = configuration;
     }
 
