@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GitInitializerTest {
+public class GitSetUpperTest {
 
     // clone kGP
     @Test
-    public void testInitializer() throws IOException, GitAPIException {
+    public void testCloneRemoteRepository() throws IOException, GitAPIException {
         final Path directoryPath = Paths.get("sample");
         final GitSetUpper gitInitializer = new GitSetUpper(directoryPath.toString(), "https://github.com/kusumotolab/kGenProg");
         final Git git = gitInitializer.setUp();
@@ -38,5 +38,12 @@ public class GitInitializerTest {
                         e1.printStackTrace();
                     }
                 });
+    }
+
+    @Test
+    public void testSpecisyLocalRepository() throws GitAPIException, IOException {
+        final GitSetUpper gitSetUpper = new GitSetUpper(".", "");
+        final Git git = gitSetUpper.setUp();
+        assertThat(git).isNotNull().isInstanceOf(Git.class);
     }
 }
