@@ -41,7 +41,7 @@ public class GitSetUpperTest {
     }
 
     @Test
-    public void testSpecisyLocalRepository() throws GitAPIException, IOException {
+    public void testSpecifyLocalRepository() throws GitAPIException, IOException {
         final GitSetUpper gitSetUpper = new GitSetUpper(".", "");
         final Git git = gitSetUpper.setUp();
         assertThat(git).isNotNull().isInstanceOf(Git.class);
